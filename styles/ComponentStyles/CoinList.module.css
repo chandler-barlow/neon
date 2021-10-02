@@ -7,18 +7,23 @@
 .coinBox{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 190px;
 }
 
 .symbol{
 
 }
 
-.leftContainer{
+.rightContainer{
 
 }
 
 .topContainer{
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90px;
 }
 
 .bottomContainer{
