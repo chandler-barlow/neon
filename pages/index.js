@@ -3,7 +3,6 @@ import Image from 'next/image'
 import LineChart from '../Components/Charts/LineChart'
 import CoinList from '../Components/CoinList/CoinList'
 import Header from '../Components/Header/Header'
-import Sidebar from '../Components/Sidebar/Sidebar'
 import styles from '../styles/PageStyles/Home.module.css'
 
 
@@ -17,7 +16,6 @@ export default function Home() {
       </Head>
 
       <div className="main">
-        <Sidebar />
         <Header />
         <CoinList />
         <LineChart />

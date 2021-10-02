@@ -1,4 +1,5 @@
 import * as AiIcons from 'react-icons/ai';
+import * as FaIcons from 'react-icons/fa'
 
 const SidebarData = [
     {
@@ -10,19 +11,13 @@ const SidebarData = [
     {
         title: 'Learn',
         path: '/Learn',
-        icon: <AiIcons.AiFillHome />,
-        cName: 'side-text'
-    },
-    {
-        title: 'Something',
-        path: '/',
-        icon: <AiIcons.AiFillHome />,
+        icon: <FaIcons.FaBook />,
         cName: 'side-text'
     },
     {
         title: 'Settings',
         path: '/',
-        icon: <AiIcons.AiFillHome />,
+        icon: <FaIcons.FaCog />,
         cName: 'side-text'
     }
 ]
