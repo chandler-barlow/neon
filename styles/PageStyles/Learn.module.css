@@ -1,0 +1,9 @@
+.container {
+    display: grid;
+    place-content: center;
+    color:  var(--clr-text);
+}
+
+.main {
+    font-size: xx-large;
+}

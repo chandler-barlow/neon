@@ -1,0 +1,51 @@
+.container {
+    color: var(--clr-text);
+    margin-left: 22rem;
+    margin-right: 2.5rem;
+}
+
+.headerContainer {
+    padding-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.6rem;
+
+}
+
+.leftContainer {
+    font-size: 1.8rem;
+}
+
+.rightContainer {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    color: var(--clr-text);
+    background: var(--gradient-btn);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 28px;
+    border-radius: 12px;
+    border: none;
+    mix-blend-mode: normal;
+    box-shadow: 0px 4px 15px #00A2FF;
+    transition: 250ms ease-out;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0px 4px 31px #00A2FF;
+    transition: all 250ms ease-in;
+}
+
+.profileContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+    cursor: pointer;
+}

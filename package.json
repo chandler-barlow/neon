@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "aws-sdk": "^2.999.0",
+    "chart.js": "^3.5.1",
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-chartjs-2": "^3.0.5",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",

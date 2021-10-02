@@ -1,0 +1,49 @@
+.container {
+    position: fixed;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    width: 15rem;
+    background: rgb(38,34,80);
+    background: var(--gradient-primary);
+}
+
+.logo {
+    background: var(--gradient-logo);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.listItems {
+    list-style: none;
+    color: var(--clr-text);
+}
+
+.listItemContainer {
+    display: flex;
+    border-radius: 8px;
+    margin-bottom: 4rem;
+    margin-right: 2rem;
+    padding: .8rem 1.3rem;
+    transition:  200ms ease-out;
+}
+
+.listItemContainer:hover {
+    background-color: #00a2ffce;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition: all 200ms ease-in;
+}
+
+.listItemContainer:active {
+    transform: scale(0.9);
+    transition: transform 250ms ease;
+}
+
+.title {
+    margin-left: 1.6rem;
+}
