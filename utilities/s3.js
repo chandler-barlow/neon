@@ -46,5 +46,4 @@ export function displayImageFile(mediaFileName) {
   }).catch((e) => {
     console.log("Error: " + e.message);
   });
-  //return image;
 }
