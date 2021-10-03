@@ -1,4 +1,4 @@
-export const postData = [
+postData:
   {
     "Title": "commodo anim mollit in veniam elit sit labore aliquip ipsum",
     "Downvotes": 1,

@@ -84,11 +84,22 @@ export function putContent(content) {
 export async function getContent(content) {
   let docClient = new AWS.DynamoDB.DocumentClient();
   if (content.TableName == "TextPosts") {
-    let params = { TableName: "TextPosts" };
-    docClient.scan(params, function (err, data) {
-      if (err) console.log("Unable to get items: " + err.message);
-      else return data;
+    let params = {
+      TableName: "TextPosts",
+      Key: {
+        uuid: uuidHashFunction(content.Item.Username)
+      }
+    };
+    let res = await docClient.scan(params, function (err, data) {
+      if (err) {
+        console.log("Unable to get items: " + err.message);
+      }
+      else {
+        console.log(data);
+        return data;
+      }
     });
+    return res;
   } else if (content.TableName == "Users") {
     let params = {
       TableName: "Users",
