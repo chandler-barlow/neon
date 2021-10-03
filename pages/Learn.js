@@ -21,13 +21,14 @@ const Learn = (props) => {
       </Head>
       <div className={styles.titleBar}>
         <div className={styles.backBtn}>
-          <TiIcons.TiArrowLeft onClick={() => router.back()}/>
+          <TiIcons.TiArrowLeft onClick={() => router.back()} />
         </div>
       </div>
 
       {postData.posts.map((post, i) => {
         return <PostCard post={post} key={i} />;
       })}
+      <div className={styles.post}><h1>Post</h1></div>
     </div>
   );
 };
