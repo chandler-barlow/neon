@@ -1,0 +1,16 @@
+.list {
+    list-style: none;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.5rem 1.5rem .5rem 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.listItems {
+    border: 1px black;
+    padding: 1rem 2rem;
+    background: rgb(38,34,80);
+    border-radius: 8px;
+    margin-bottom: .8rem;
+    min-width: 25rem;
+}

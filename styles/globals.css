@@ -8,6 +8,10 @@
     --gradient-btn: linear-gradient(152.64deg, #00A2FF 21.56%, #FF9A00 118.21%);
 }
 
+* {
+  margin: 0;
+}
+
 html,
 body {
   padding: 0;
