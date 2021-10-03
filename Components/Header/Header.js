@@ -74,10 +74,12 @@ const Header = () => {
                         </div>
                         </Modal>
                     </div>
-                    <div className={styles.profileContainer}>
-                        <img style={{marginRight: '0.8rem', borderRadius: '50%', width: 30, height: 30}} src="https://randomuser.me/api/portraits/med/men/75.jpg" alt="" />
-                        <p>{name}</p>
-                    </div>
+                    <a href="/Profile">
+                        <div className={styles.profileContainer}>
+                            <img style={{marginRight: '0.8rem', borderRadius: '50%', width: 30, height: 30}} src="https://randomuser.me/api/portraits/med/men/74.jpg" alt="" />
+                            <p>{name}</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

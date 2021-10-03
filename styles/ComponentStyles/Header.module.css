@@ -1,7 +1,7 @@
 .container {
     color: var(--clr-text);
     margin-left: 22rem;
-    margin-right: 2.5rem;
+    margin-right: 7.8rem;
 }
 
 /* modal styles */
@@ -77,7 +77,6 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.6rem;
-
 }
 
 .leftContainer {
