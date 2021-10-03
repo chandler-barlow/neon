@@ -8,6 +8,9 @@ import styles from "../styles/PageStyles/Learn.module.css";
 import { PostCard } from "../components/PostCard/PostCard";
 import postData from "../data/posts.json";
 import * as TiIcons from "react-icons/ti";
+import { getContent } from '../utilities/db.js';
+
+
 const Learn = (props) => {
   //let [globalState, dispatch] = useContext(GlobalContext);
   //console.log(globalState);

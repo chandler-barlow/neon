@@ -1,4 +1,4 @@
-const userData = [
+export const userData = [
   {
     "SSN": "dolor",
     "email": "amet",
