@@ -1,0 +1,22 @@
+.container {
+    display: grid;
+    color:  var(--clr-text);
+}
+
+.main {
+    display: flex;
+    font-size: xxx-large;
+    align-items: center;
+    padding-left: 0.5em;
+}
+
+.picture {
+  border-radius: 100%;
+  size: 200%;
+}
+
+.wallet {
+  background-color: white;
+  length: auto;
+  width: auto;
+}
