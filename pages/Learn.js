@@ -29,9 +29,15 @@ const Learn = (props) => {
       </div>
 
       {postData.posts.map((post, i) => {
-        return <PostCard post={post} key={i} />;
+        return (
+          <a key={post.id} href={`/post/${post.id}`}>
+            <PostCard post={post} />
+          </a>
+        );
       })}
-      <div className={styles.post}><h1>Post</h1></div>
+      <div className={styles.post}>
+        <h1>Post</h1>
+      </div>
     </div>
   );
 };
