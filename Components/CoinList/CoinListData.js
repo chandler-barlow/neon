@@ -4,6 +4,13 @@ import * as FaIcons from 'react-icons/fa'
 
 const coinListData = [
     {
+        symbol: <SiIcons.SiNginx />,
+        currentPrice: 120.0,
+        ticker: 'NEON',
+        priceChangePercentage: 0.5,
+        coinColor: '#1f8a0c',
+    },
+    {
         symbol: <BiIcons.BiBitcoin />,
         currentPrice: 9999,
         ticker: 'BTC',

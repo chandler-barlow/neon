@@ -1,15 +1,25 @@
 import { Line } from 'react-chartjs-2';
 
 const data = {
-  labels: ['1', '2', '3', '4', '5', '6'],
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   datasets: [
     {
-      label: 'My Portfolio',
-      data: [12, 19, 3, 5, 3, 11],
+      label: 'Market Watch',
+      data: [12, 19, 3, 5, 3, 11, 10, 3, 4, 17, 8, 5],
       fill: true,
+      yAxesId: 'y',
       pointBackgroundColor: '#fff',
       backgroundColor: '#00a2ff4b',
       borderColor: '#00A2FF',
+    },
+    {
+      label: 'Neon $120',
+      data: [1, 4, 6, 5, 3, 8, 12, 6, 8, 9, 4, 10],
+      fill: true,
+      yAxesId: 'y1',
+      pointBackgroundColor: '#fff',
+      backgroundColor: '#1f8a0c86',
+      borderColor: '#1f8a0c',
     },
   ],
 };
@@ -28,7 +38,10 @@ const options = {
           display: false
        }
     }]
- }
+  },
+  grid: {
+    drawOnChartArea: false,
+  }
 };
 
 const LineChart = () => (
