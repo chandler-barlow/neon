@@ -1,9 +1,18 @@
 .container {
-    display: grid;
-    place-content: center;
-    color:  var(--clr-text);
+  display: flex;
+  flex-direction: column;
+  margin-left: 17rem;
+  color: var(--clr-text);
+}
+.backBtn :hover {
+  cursor: pointer;
+}
+.backBtn {
+  margin-left: -1rem;
+  position: fixed;
+  font-size: 3.5rem;;
 }
 
 .main {
-    font-size: xx-large;
+  font-size: xx-large;
 }
