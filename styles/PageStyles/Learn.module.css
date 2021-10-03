@@ -16,3 +16,20 @@
 .main {
   font-size: xx-large;
 }
+
+.post{
+    background: orange;
+    position: fixed;
+    bottom: 2rem;
+    left: 69rem;
+    border-radius: 10em;
+    display: flex;
+    align-items: center;
+    width: 9rem;
+    height: 3rem;
+}
+.post h1{
+    font-size: 1.5rem;
+    align-self: center;
+    margin: auto;
+}

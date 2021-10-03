@@ -16,13 +16,19 @@ export function PostCard(props) {
   return (
     <div className={styles.card}>
       <h1 className={styles.title}>{title}</h1>
-      <h1 className={styles.body}>{body}</h1>
-      <h1>stake</h1>
-      <div>
-        <BiIcons.BiRocket className={styles.rocket} />
+      <h1 className={styles.body}>
+        {body.length < 200 ? body : body.slice(0, 200) + "..."}
+      </h1>
+      <div className={styles.footer}>
+        <div className={styles.stakeBox} onClick={() => addStake(id, 100)}>
+          <BiIcons.BiRocket className={styles.rocket} />
+          <h1 className={styles.stake}>{stake}</h1>
+        </div>
+        <div
+          className={
+            styles.username
+          }>{`by ${user} expires in ${dateClosing}`}</div>
       </div>
-
-      <button onClick={() => addStake(id, 100)}>Add Stake</button>
     </div>
   );
 }
