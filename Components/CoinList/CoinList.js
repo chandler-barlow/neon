@@ -1,27 +1,38 @@
 import styles from '../../styles/ComponentStyles/CoinList.module.css'
-import * as BiIcons from 'react-icons/bi'
 import * as IoIcons from 'react-icons/io'
+import { coinListData } from './CoinListData'
 
 
 const CoinList = () => {
+    
     return (
         <div className={styles.container}>
             <p>COINS</p>
-            <div className={styles.coinBox}>
-                <div className={styles.symbol}>
-                    <BiIcons.BiBitcoin style={{fontSize: 30}}/>
-                </div>
-                <div className={styles.rightContainer}>
-                    <div className={styles.topContainer}>
-                        <span style={{fontSize: 17}}>1.765</span>
-                        <span style={{fontSize: 12, fontWeight: 'bold'}}>BTC</span>
-                    </div>
-                    <div className={styles.bottomContainer}>
-                        <IoIcons.IoMdArrowDropup />
-                        <span style={{fontSize: 11}}>+12.5%</span>
-                    </div>
-                </div>
-            </div>
+
+            <ul className={styles.coinCardList}>
+                {coinListData.map((item, index) => {
+                    return (
+                        <li key={index} className={styles.itemMapContainer}>
+                            <div style={{background: item.coinColor}} className={styles.coinBox}>
+                                <div className={styles.symbol}>
+                                    {item.symbol}
+                                </div>
+                                <div className={styles.rightContainer}>
+                                    <div className={styles.topContainer}>
+                                        <span style={{fontSize: 17}}>{item.currentPrice}</span>
+                                        <span style={{fontSize: 12, fontWeight: 'bold'}}>{item.ticker}</span>
+                                    </div>
+                                    <div style={{display: 'flex', justifyContent: 'flex-end'}} className={styles.bottomContainer}>
+                                        <IoIcons.IoMdArrowDropup style={{display: 'inline', color: '#50E3C2'}}/>
+                                        <span style={{fontSize: 11, color: '#50E3C2'}}>{item.priceChangePercentage}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    )
+                })}
+            </ul>
+
         </div>
     )
 }

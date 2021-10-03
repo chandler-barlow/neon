@@ -4,28 +4,49 @@
     margin-right: 2.5rem;
 }
 
+.coinCardList {
+    padding: 0;
+    padding-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.itemMapContainer {
+    list-style: none;
+    transition: 250ms ease;
+    cursor: default;
+}
+
+.itemMapContainer:hover {
+    transform: translateY(-10px);
+    transition: transform 250ms ease;
+}
+
 .coinBox{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 190px;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    width: 11.8rem;
+    margin-right: 1.25rem;
 }
 
 .symbol{
-
-}
-
-.rightContainer{
-
+    font-size: 1.5rem;
 }
 
 .topContainer{
+    min-width: 4.6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 90px;
 }
 
 .bottomContainer{
-
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 3.3rem;
 }
