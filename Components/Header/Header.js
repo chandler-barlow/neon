@@ -2,12 +2,26 @@ import { useState } from 'react'
 import styles from '../../styles/ComponentStyles/Header.module.css'
 import * as FaIcons from 'react-icons/fa'
 import Modal from 'react-modal'
-
+import { getContent } from "../../utilities/db.js";
+import { userData } from "../../utilities/user_information.js";
 
 const Header = () => {
-    const name = 'Random User'
+
+    // select random user to log in as
+    const dataFromDB = {
+      TableName: 'Users',
+      Item: {
+        Username: userData[Math.floor(Math.random()*10)]
+      }
+    }
+    getContent(dataFromDB);
+
+    const name = "Random User";
+
+    //const name = "hello";
+
     const notifications = 2;
-    
+
     const [modalIsOpen, setIsOpen] = useState(false);
 
     function openModal() {
@@ -17,7 +31,7 @@ const Header = () => {
     function closeModal() {
         setIsOpen(false);
     }
-    
+
     return (
         <div className={styles.container}>
             <div className={styles.headerContainer}>
@@ -58,12 +72,10 @@ const Header = () => {
                         </div>
                         </Modal>
                     </div>
-                    <a href="/Profile">
-                        <div className={styles.profileContainer}>
-                            <img style={{marginRight: '0.8rem', borderRadius: '50%', width: 30, height: 30}} src="https://randomuser.me/api/portraits/med/men/75.jpg" alt="" />
-                            <p>Random User</p>
-                        </div>
-                    </a>
+                    <div className={styles.profileContainer}>
+                        <img style={{marginRight: '0.8rem', borderRadius: '50%', width: 30, height: 30}} src="https://randomuser.me/api/portraits/med/men/75.jpg" alt="" />
+                        <p>Random User</p>
+                    </div>
                 </div>
             </div>
         </div>

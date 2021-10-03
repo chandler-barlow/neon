@@ -87,7 +87,7 @@ export function putContent(content) {
 // get content from the db server (RETURNS ALL POSTS IF POSTS SPECIFIED)
 // returns one specific user at a time
 // returns: all returns are JSON objects
-export function getContent(content) {
+export async function getContent(content) {
   let docClient = new AWS.DynamoDB.DocumentClient();
   if (content.TableName == "TextPosts") {
     let params = { TableName: "TextPosts" }
@@ -105,11 +105,13 @@ export function getContent(content) {
           uuid: uuidHashFunction(content.Item.Username)
       }
     }
-    docClient.get(params, function(err, data) {
+    docClient.scan(params, function(err, data) {
       if (err)
         console.log("Unable to get user: " + err.message);
-      else
+      else {
+        console.log(data);
         return data;
+      }
     })
   }
   else
