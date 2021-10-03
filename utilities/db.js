@@ -1,26 +1,28 @@
-import AWS from 'aws-sdk'
+import AWS from "aws-sdk";
 
-const endpoint = "https://dynamodb.us-east-2.amazonaws.com"
-const accessKeyId = process.env.AWS_ACCESS_KEY_ID_DB
-const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY_ID_DB
-const region = "us-east-2"
+const endpoint = "https://dynamodb.us-east-2.amazonaws.com";
+const accessKeyId = process.env.AWS_ACCESS_KEY_ID_DB;
+const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY_ID_DB;
+const region = "us-east-2";
 
 // config aws-sdk
 AWS.config.update({
   accessKeyId: "AKIAXF7CFXF7M5HQTMF3",
   secretAccessKey: "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",
   endpoint: "https://dynamodb.us-east-2.amazonaws.com",
-  region: region
+  region: region,
 });
 
 // generate a uuid based on the hash of the username attribute.
 //    this will generate the same hash for every post, so the posts
 //    can be easily searched by username
 export function uuidHashFunction(username) {
-  var hash = 0, i, chr;
+  var hash = 0,
+    i,
+    chr;
   for (i = 0; i < username.length; i++) {
-    chr   = username.charCodeAt(i);
-    hash  = ((hash << 5) - hash) + chr;
+    chr = username.charCodeAt(i);
+    hash = (hash << 5) - hash + chr;
     hash |= 0; // Convert to 32bit integer
   }
   return hash;
@@ -40,21 +42,18 @@ export function putContent(content) {
         Upvotes: 0,
         Body: content.Item.Body,
         Username: content.Item.Username,
-        Comments: content.Item.Comments
-      }
-    }
+        Comments: content.Item.Comments,
+      },
+    };
 
-    docClient.put(params, function(err, data) {
-      if(err) {
+    docClient.put(params, function (err, data) {
+      if (err) {
         console.log("Unable to add item:", JSON.stringify(err, null, 2));
-      }
-      else {
+      } else {
         console.log("Added item:", JSON.stringify(data, null, 2));
       }
     });
-  }
-
-  else if (content.TableName == "Users") {
+  } else if (content.TableName == "Users") {
     let params = {
       TableName: "Users",
       Item: {
@@ -68,20 +67,15 @@ export function putContent(content) {
         Username: content.Item.Username,
         Currency: {
           NeonQuant: 0,
-          DollarQuant: 0
-        }
-      }
-    }
-    docClient.put(params, function(err, data) {
-      if(err)
-        console.log("Unable to add item:", JSON.stringify(err, null, 2));
-      else
-        console.log("Added item:", JSON.stringify(data, null, 2));
+          DollarQuant: 0,
+        },
+      },
+    };
+    docClient.put(params, function (err, data) {
+      if (err) console.log("Unable to add item:", JSON.stringify(err, null, 2));
+      else console.log("Added item:", JSON.stringify(data, null, 2));
     });
-  }
-
-  else
-    console.log("Table name not found");
+  } else console.log("Table name not found");
 }
 
 // get content from the db server (RETURNS ALL POSTS IF POSTS SPECIFIED)
@@ -90,32 +84,29 @@ export function putContent(content) {
 export async function getContent(content) {
   let docClient = new AWS.DynamoDB.DocumentClient();
   if (content.TableName == "TextPosts") {
-    let params = { TableName: "TextPosts" }
-    docClient.scan(params, function(err, data) {
-      if (err)
-        console.log("Unable to get items: " + err.message);
-      else
-        return data;
-    })
-  }
-  else if (content.TableName == "Users") {
+    let params = { TableName: "TextPosts" };
+    docClient.scan(params, function (err, data) {
+      if (err) console.log("Unable to get items: " + err.message);
+      else return data;
+    });
+  } else if (content.TableName == "Users") {
     let params = {
       TableName: "Users",
       Key: {
-          uuid: uuidHashFunction(content.Item.Username)
-      }
-    }
-    docClient.scan(params, function(err, data) {
-      if (err)
+        uuid: uuidHashFunction(content.Item.Username),
+      },
+    };
+    let res = await docClient.scan(params, function (err, data) {
+      if (err) {
         console.log("Unable to get user: " + err.message);
-      else {
+        return err;
+      } else {
         console.log(data);
         return data;
       }
-    })
-  }
-  else
-    console.log("Unable to find table name");
+    });
+    return res;
+  } else console.log("Unable to find table name");
 }
 
 // update exsisting content
@@ -130,7 +121,6 @@ export function deleteContent(content) {
   if (content.TableName == "TextPosts") {
     let params = {
       TableName: content.TableName,
-
-    }
+    };
   }
 }
