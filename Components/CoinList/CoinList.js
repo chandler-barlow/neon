@@ -7,7 +7,7 @@ const CoinList = () => {
     
     return (
         <div className={styles.container}>
-            <p>COINS</p>
+            <p>MARKET WATCH</p>
 
             <ul className={styles.coinCardList}>
                 {coinListData.map((item, index) => {
@@ -19,7 +19,7 @@ const CoinList = () => {
                                 </div>
                                 <div className={styles.rightContainer}>
                                     <div className={styles.topContainer}>
-                                        <span style={{fontSize: 17}}>{item.currentPrice}</span>
+                                        <span style={{fontSize: 17, paddingRight: 10}}>$ {item.currentPrice}</span>
                                         <span style={{fontSize: 12, fontWeight: 'bold'}}>{item.ticker}</span>
                                     </div>
                                     <div style={{display: 'flex', justifyContent: 'flex-end'}} className={styles.bottomContainer}>

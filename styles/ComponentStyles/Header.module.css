@@ -4,6 +4,73 @@
     margin-right: 2.5rem;
 }
 
+/* modal styles */
+.modal {
+    position: absolute;
+    right: 2.9rem;
+    top: 6rem;
+    width: 381px;
+    height: 488px;
+    border-radius: 10px;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 60%);
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent
+}
+
+.topWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.modalCancel {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: larger;
+}
+
+.notifications {
+    cursor: default;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #12103050;
+    color: var(--clr-text);
+}
+
+.notificationsTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 70%;
+}
+
+.notificationsMiddle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notificationsBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80px;
+}
+
+/* end modal styles */
+
 .headerContainer {
     padding-top: 2.5rem;
     display: flex;

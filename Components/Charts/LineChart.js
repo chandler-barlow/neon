@@ -15,15 +15,20 @@ const data = {
 };
 
 const options = {
+  responsive: true,
+  maintainAspectRatio: false,
   scales: {
-    yAxes: [
-      {
-        ticks: {
-          beginAtZero: true,
-        },
-      },
-    ],
-  },
+    xAxes: [{
+       gridLines: {
+          display: false
+       }
+    }],
+    yAxes: [{
+       gridLines: {
+          display: false
+       }
+    }]
+ }
 };
 
 const LineChart = () => (
@@ -38,7 +43,7 @@ const LineChart = () => (
             width={100} 
             height={400} 
             data={data} 
-            options={(options, { maintainAspectRatio: false })}
+            options={options}
         />
     </div>
   </>
